@@ -5,32 +5,32 @@ window.onload = function () {
     let questions = [
         {
             text: "From which language is the word ‘ketchup’ derived?",
-            variants: [USA, Denmark, Italy, China],
-            answer: China
+            variants: ["USA", "Denmark", "Italy", "China"],
+            answer: "China"
         },
 
         {
             text: "Which is the country with the biggest population in Europe?",
-            variants: [Ukraine, Russia, Poland, Germany],
-            answer: Russia
+            variants: ["Ukraine", "Russia", "Poland", "Germany"],
+            answer: "Russia"
         },
 
         {
             text: "Complete the title of the play by Shakespeare – ‘The Merchant of …’?",
-            variants: [Venice, Rome, London, Berlin],
-            answer: Venice
+            variants: ["Venice", "Rome", "London", "Berlin"],
+            answer: "Venice"
         },
 
         {
             text: "What are made and repaired by a cobbler?",
-            variants: [shoes, jacket, umbrella, hat],
-            answer: shoes
+            variants: ["shoes", "jacket", "umbrella", "hat"],
+            answer: "shoes"
         },
 
         {
             text: "What colour are the four stars on the flag of New Zealand?",
-            variants: [blue, red, yellow, green],
-            answer: red
+            variants: ["blue", "red", "yellow", "green"],
+            answer: "red"
         },
 
         {
@@ -41,8 +41,8 @@ window.onload = function () {
 
         {
             text: "H2O is the chemical formula for what?",
-            variants: [water, air, ferrum, gold],
-            answer: water
+            variants: ["water", "air", "ferrum", "gold"],
+            answer: "water"
         }
     ]
 
@@ -78,6 +78,7 @@ window.onload = function () {
             let label = document.createElement("label");
             label.className = "form-chack-label"
             label.setAttribute("for", "quest" + quest_num + "ans" + i);
+            label.innerHTML = question.variants[i];
 
             answer_div.appendChild(answer);     //'Input' and 'label' tags are inserted into their 'div' block
             answer_div.appendChild(label);
@@ -86,7 +87,7 @@ window.onload = function () {
         };
 
         new_question.appendChild(question_text);
-        new_question.appendChild(question_box);
+        new_question.appendChild(questions_box);
         test_container.appendChild(new_question);   //Block for each separate question is inserted into general block for all questions
     }
 
@@ -123,7 +124,7 @@ window.onload = function () {
         let all_questions = document.querySelectorAll("input[type='radio']");   //Search all 'input' tags with 'radio' type on page
 
         for (i - 0; i < all_questions.length; i++) {    //All questions returned to unanswered state after result display
-            all_questions[i].checked = false;
+            all_questions[i=0].checked = false;
         }
     },false)
 }
